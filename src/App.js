@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
+import Home from './pages/Home';
+import Freedraw from './pages/Freedraw';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Navbar className="App-Navbar">
+          <Navbar.Brand>Drawing</Navbar.Brand>
+          <div>
+          <Nav>
+            <Link className='App-link' to='/'>Home</Link>
+            <Link className='App-link' to='/freedraw'>Free Draw</Link>
+          </Nav>
+          </div>
+        </Navbar>
+
+        <Route exact path='/' component={Home} />
+        <Route exact path='/freedraw' component={Freedraw} />
+
+      </BrowserRouter>
     </div>
   );
 }
