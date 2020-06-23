@@ -18,7 +18,7 @@ class Drawingboard extends Component {
         return (
             <div className="Drawingboard" onMouseDown={this.makePainting} onMouseUp={this.makePainting}>
                 {[...Array(n)].map(() => (
-                    <Colorpixel isPainting={this.state.isPainting}/>
+                    <Colorpixel isPainting={this.state.isPainting} color={this.props.color} />
                 ))}
             </div>
         );

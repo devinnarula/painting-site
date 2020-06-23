@@ -15,8 +15,14 @@ class Colorpixel extends Component {
         }
     }
     render() {
+        const color = this.props.color
+        console.log(color)
         return (
-            <div className={this.state.active ? 'ColorpixelActive' : 'Colorpixel'} onMouseMove={this.makeActive}>
+            <div className={this.state.active ? 'ColorpixelActive' : 'Colorpixel'} 
+                // style={{
+                //     backgroundColor: color
+                // }} 
+                onMouseMove={this.makeActive}>
                 
             </div>
         );
