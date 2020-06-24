@@ -7,3 +7,18 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.Drawingboard-Container{
+    display: flex;
+    margin-right: 50px;
+}
+
+.Drawingboard-Button{
+    height: 50px;
+    font-size: 30px;
+    background-color: lightgray;
+    border-color: lightgray;
+    color: white;
+    -webkit-text-stroke: 1px gray;
+    margin-left: 5px;
+}

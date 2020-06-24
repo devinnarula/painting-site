@@ -1,6 +1,5 @@
 .Freedraw-DrawingBoard{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+    justify-content: center;
+    margin-top: 50px;
 }
