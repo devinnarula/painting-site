@@ -13,12 +13,20 @@
     margin-right: 50px;
 }
 
+.Drawingboard-Buttons{
+    display: flex;
+    flex-direction: column;
+}
+
 .Drawingboard-Button{
     height: 50px;
     font-size: 30px;
     background-color: lightgray;
     border-color: lightgray;
     color: white;
-    -webkit-text-stroke: 1px gray;
-    margin-left: 5px;
+    margin: 5px;
+}
+
+.Drawingboard-Button:hover{
+    box-shadow: 2px 2px 3px gray;
 }

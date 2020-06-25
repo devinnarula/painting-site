@@ -11,12 +11,26 @@ class Colorpixel extends Component {
         this.makeActive = this.makeActive.bind(this)
         this.toggleShouldUpdate = this.toggleShouldUpdate.bind(this)
     }
+    componentWillReceiveProps() {
+        if(this.props.shouldClear) {
+            
+            this.props.resetColor()
+            this.props.doneClear()
+            this.setState({shouldUpdate: true})
+            this.forceUpdate()
+        }
+    }
     shouldComponentUpdate(nextProps, nextState) {
         if(this.state.shouldUpdate){
             return true
         }
         else {
             return false
+        }
+    }
+    componentDidUpdate(){
+        if(this.state.shouldUpdate){
+            this.setState({shouldUpdate: false})
         }
     }
     makeActive() {
@@ -28,13 +42,11 @@ class Colorpixel extends Component {
         this.setState({shouldUpdate: !this.state.shouldUpdate})
     }
     render() {
-        const color = this.props.color
-        console.log(color)
         return (
             <div 
                 className='Colorpixel' 
                 style={{
-                    backgroundColor: `${this.state.shouldUpdate ? this.props.color : 'FFF'}` 
+                    backgroundColor: `${(this.state.shouldUpdate) ? this.props.color : 'FFFFFF'}` 
                 }} 
 
                 onMouseOver={this.toggleShouldUpdate}

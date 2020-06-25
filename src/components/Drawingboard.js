@@ -8,10 +8,13 @@ class Drawingboard extends Component {
         super(props)
         this.state = {
             isPainting: false,
+            shouldClear: false
         };
         this.makePainting = this.makePainting.bind(this)
         this.stopPainting = this.stopPainting.bind(this)
-        this.downloadImage = this.downloadImage.bind(this)
+        this.saveImage = this.saveImage.bind(this)
+        this.clearPainting = this.clearPainting.bind(this)
+        this.doneClear = this.doneClear.bind(this)
     }
     makePainting() {
         this.setState({isPainting: !this.state.isPainting})
@@ -19,14 +22,26 @@ class Drawingboard extends Component {
     stopPainting() {
         this.setState({isPainting: false})
     }
-    downloadImage() {
-        htmlToImage.toJpeg(document.getElementById('Drawingboard'), { quality: 0.95 })
+    clearPainting(){
+        // this.makePainting();
+        // this.props.resetColor();
+        this.setState({shouldClear: true})
+    }
+    doneClear(){
+        // this.makePainting();
+        // this.props.resetColor();
+        this.setState({isPainting: !this.state.isPainting, shouldClear: false})
+    }
+    saveImage() {
+        let that = this
+        htmlToImage.toJpeg(document.getElementById('Drawingboard'), { quality: 0.95})
             .then(function (dataUrl) {
                 var link = document.createElement('a');
                 link.download = 'Drawingboard.jpeg';
                 link.href = dataUrl;
-                link.click();
-            });
+                // link.click();
+                that.props.addImage(dataUrl)
+            });            
     }
     render() {
         const n = 625
@@ -34,10 +49,13 @@ class Drawingboard extends Component {
             <div className='Drawingboard-Container'>
                 <div id='Drawingboard' className="Drawingboard" onMouseDown={this.makePainting} onMouseUp={this.makePainting} onMouseLeave={this.stopPainting} >
                     {[...Array(n)].map(() => (
-                        <Colorpixel isPainting={this.state.isPainting} color={this.props.color} />
+                        <Colorpixel isPainting={this.state.isPainting} color={this.props.color} shouldClear={this.state.shouldClear} doneClear={this.doneClear} resetColor={this.props.resetColor} />
                     ))}
                 </div>
-                <button className='Drawingboard-Button' onClick={this.downloadImage} >⬇</button>
+                <div className='Drawingboard-Buttons'>
+                    <button className='Drawingboard-Button' onClick={this.clearPainting} >Clear</button>
+                    <button className='Drawingboard-Button' onClick={this.saveImage} >Save</button>
+                </div>
             </div>
         );
     }
