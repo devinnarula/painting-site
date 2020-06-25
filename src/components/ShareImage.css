@@ -1,0 +1,27 @@
+.ShareImage {
+    position: absolute;
+    z-index: 1000;
+    width: 70%;
+    height: 100%;
+    background-color: whitesmoke;
+    border-radius: 2%;
+    box-shadow: 2px 2px 20px gray;
+}
+
+.ShareImage-Content {
+    background-color: lightgreen;
+    display: flex;
+    align-items: flex-start;
+}
+
+.ShareImage-img {
+    width: 60%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.ShareImage-Buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}

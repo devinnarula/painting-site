@@ -39,7 +39,6 @@ class Drawingboard extends Component {
                 var link = document.createElement('a');
                 link.download = 'Drawingboard.jpeg';
                 link.href = dataUrl;
-                // link.click();
                 that.props.addImage(dataUrl)
             });            
     }
@@ -49,7 +48,7 @@ class Drawingboard extends Component {
             <div className='Drawingboard-Container'>
                 <div id='Drawingboard' className="Drawingboard" onMouseDown={this.makePainting} onMouseUp={this.makePainting} onMouseLeave={this.stopPainting} >
                     {[...Array(n)].map(() => (
-                        <Colorpixel isPainting={this.state.isPainting} color={this.props.color} shouldClear={this.state.shouldClear} doneClear={this.doneClear} resetColor={this.props.resetColor} />
+                        <Colorpixel isPainting={this.state.isPainting} color={this.props.color} shouldClear={this.state.shouldClear} doneClear={this.doneClear} resetColor={this.props.resetColor} getColor={this.props.getColor} />
                     ))}
                 </div>
                 <div className='Drawingboard-Buttons'>

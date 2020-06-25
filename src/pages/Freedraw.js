@@ -9,11 +9,13 @@ class Freedraw extends Component {
         super(props)
         this.state = {
             color: '#000',
+            oldColor: '#FFF',
             images: []
         }
         this.changeColor = this.changeColor.bind(this)
         this.addImage = this.addImage.bind(this)
         this.resetColor = this.resetColor.bind(this)
+        this.getColor = this.getColor.bind(this)
     }
     changeColor(color) {
         this.setState({color: color.hex})
@@ -22,14 +24,18 @@ class Freedraw extends Component {
         this.setState({images: [...this.state.images, image]})
     }
     resetColor() {
+        this.setState({oldColor: this.state.color})
         this.setState({color: '#FFFFFF'})
+    }
+    getColor() {
+        this.setState({color: this.state.oldColor})
     }
     render() {
         return (
             <div>
                 <h1>FREE DRAW</h1>
                 <div className="Freedraw-DrawingBoard">
-                    <Drawingboard color={this.state.color} addImage={this.addImage} resetColor={this.resetColor} />
+                    <Drawingboard color={this.state.color} addImage={this.addImage} resetColor={this.resetColor} getColor={this.getColor}/>
                     <SketchPicker color={this.state.color} onChange={this.changeColor}/>
                 </div>
                 <button onClick={this.resetColor}>Clear</button>

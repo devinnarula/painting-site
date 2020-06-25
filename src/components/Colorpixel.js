@@ -18,6 +18,7 @@ class Colorpixel extends Component {
             this.props.doneClear()
             this.setState({shouldUpdate: true})
             this.forceUpdate()
+            this.props.getColor()
         }
     }
     shouldComponentUpdate(nextProps, nextState) {
