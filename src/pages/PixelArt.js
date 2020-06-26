@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import { SketchPicker } from 'react-color';
-import DrawArea from '../components/DrawArea';
+import Drawingboard from '../components/Drawingboard'
 import Collection from '../components/Collection'
-import './FreeDraw.css';
+import './PixelArt.css';
 
-class FreeDraw extends Component {
+class PixelArt extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -33,9 +33,9 @@ class FreeDraw extends Component {
     render() {
         return (
             <div>
-                <h1 className='Freedraw-Title'>FREE DRAW</h1>
-                <div className="Freedraw-DrawingBoard">
-                    <DrawArea color={this.state.color} addImage={this.props.addImage}/>
+                <h1 className='PixelArt-Title'>PIXEL ART</h1>
+                <div className="PixelArt-DrawingBoard">
+                    <Drawingboard color={this.state.color} addImage={this.props.addImage} resetColor={this.resetColor} getColor={this.getColor}/>
                     <SketchPicker color={this.state.color} onChange={this.changeColor}/>
                 </div>
                 {/* <Collection images={this.state.images} /> */}
@@ -44,4 +44,4 @@ class FreeDraw extends Component {
     }
 }
 
-export default FreeDraw;
+export default PixelArt;

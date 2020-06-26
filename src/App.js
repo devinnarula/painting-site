@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { Navbar, Nav } from 'react-bootstrap';
 import Home from './pages/Home';
-import Freedraw from './pages/Freedraw';
+import PixelArt from './pages/PixelArt';
+import FreeDraw from './pages/FreeDraw';
 import Collection from './components/Collection'
 import './App.css';
 
@@ -26,13 +27,15 @@ class App extends Component {
             <div>
             <Nav>
               <Link className='App-link' to='/'>Home</Link>
+              <Link className='App-link' to='/pixelart'>Pixel Art</Link>
               <Link className='App-link' to='/freedraw'>Free Draw</Link>
             </Nav>
             </div>
           </Navbar>
 
           <Route exact path='/' component={(routeProps) => (<Home {...routeProps} addImage={this.addImage} />)} />
-          <Route exact path='/freedraw' component={(routeProps) => (<Freedraw {...routeProps} addImage={this.addImage} />)} />
+          <Route exact path='/pixelart' component={(routeProps) => (<PixelArt {...routeProps} addImage={this.addImage} />)} />
+          <Route exact path='/freedraw' component={(routeProps) => (<FreeDraw {...routeProps} addImage={this.addImage} />)} />
 
           <Collection images={this.state.images} />
         </BrowserRouter>

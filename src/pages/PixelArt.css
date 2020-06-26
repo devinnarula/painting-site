@@ -1,0 +1,10 @@
+.PixelArt-Title {
+    font-size: 40px;
+    color: yellow;
+    text-shadow: 3px 3px indigo;
+}
+.PixelArt-DrawingBoard {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
