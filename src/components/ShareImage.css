@@ -8,6 +8,17 @@
     box-shadow: 2px 2px 20px gray;
 }
 
+.ShareImage-Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ShareImage-HeaderTitle {
+    color: purple;
+    margin-left: 41%;
+}
+
 .ShareImage-Content {
     display: flex;
     align-items: flex-start;
@@ -36,4 +47,11 @@
 
 .ShareImage-Button:hover{
     box-shadow: 2px 2px 3px yellow;
+}
+
+.ShareImage-Slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
 }

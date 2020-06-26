@@ -67,8 +67,10 @@ class ShareImage extends Component {
     render() {
         return (
             <div className='ShareImage'>
-                <h1>Edit and Download</h1>
-                <button className='ShareImage-Button' onClick={this.props.exitDisplay()} >X</button>
+                <div className='ShareImage-Header'>
+                <h1 className='ShareImage-HeaderTitle'>Edit and Download</h1>
+                <button className='ShareImage-Button' style={{marginRight: '20px'}} onClick={this.props.exitDisplay} >X</button>
+                </div>
                 <div className='ShareImage-Content'>
                     <img className="ShareImage-img" src={this.props.imgSrc} 
                     style={{
@@ -87,39 +89,39 @@ class ShareImage extends Component {
                     />
                     <div className='ShareImage-Buttons'>
                         <div>
-                            <div>
+                            <div className='ShareImage-Slider'>
                             <label for="brightness">Brightness</label>
                             <input type="range" min="0" max="100" value={this.state.brightness} name="brightness" onChange={this.updateBrightness} />
                             </div>
-                            <div>
+                            <div className='ShareImage-Slider'>
                             <label for="contrast">Contrast</label>
                             <input type="range" min="0" max="100" value={this.state.contrast} name="contrast" onChange={this.updateContrast} />
                             </div>
-                            <div>
+                            <div className='ShareImage-Slider'>
                             <label for="grayscale">Grayscale</label>
                             <input type="range" min="0" max="100" value={this.state.grayscale} name="grayscale" onChange={this.updateGrayscale} />
                             </div>
-                            <div>
+                            <div className='ShareImage-Slider'>
                             <label for="blur">Blur</label>
                             <input type="range" min="0" max="100" value={this.state.blur} name="blur" onChange={this.updateBlur} />
                             </div>
-                            <div>
+                            <div className='ShareImage-Slider'>
                             <label for="hue-rotate">Hue-Rotate</label>
                             <input type="range" min="0" max="100" value={this.state.huerotate} name="hue-rotate" onChange={this.updateHuerotate} />
                             </div>
-                            <div>
+                            <div className='ShareImage-Slider'>
                             <label for="invert">Invert</label>
                             <input type="range" min="0" max="100" value={this.state.invert} name="invert" onChange={this.updateInvert} />
                             </div>
-                            <div>
+                            <div className='ShareImage-Slider'>
                             <label for="opacity">Opacity</label>
                             <input type="range" min="0" max="100" value={this.state.opacity} name="opacity" onChange={this.updateOpacity} />
                             </div>
-                            <div>
+                            <div className='ShareImage-Slider'>
                             <label for="saturate">Saturate</label>
                             <input type="range" min="0" max="100" value={this.state.saturate} name="saturate" onChange={this.updateSaturate} />
                             </div>
-                            <div>
+                            <div className='ShareImage-Slider'>
                             <label for="sepia">Sepia</label>
                             <input type="range" min="0" max="100" value={this.state.sepia} name="sepia" onChange={this.updateSepia} />
                             </div>

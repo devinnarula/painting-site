@@ -10,19 +10,19 @@ class Freedraw extends Component {
         this.state = {
             color: '#000',
             oldColor: '#FFF',
-            images: []
+            // images: []
         }
         this.changeColor = this.changeColor.bind(this)
-        this.addImage = this.addImage.bind(this)
+        // this.addImage = this.addImage.bind(this)
         this.resetColor = this.resetColor.bind(this)
         this.getColor = this.getColor.bind(this)
     }
     changeColor(color) {
         this.setState({color: color.hex})
     }
-    addImage(image) {
-        this.setState({images: [...this.state.images, image]})
-    }
+    // addImage(image) {
+    //     this.setState({images: [...this.state.images, image]})
+    // }
     resetColor() {
         this.setState({oldColor: this.state.color})
         this.setState({color: '#FFFFFF'})
@@ -35,10 +35,10 @@ class Freedraw extends Component {
             <div>
                 <h1 className='Freedraw-Title'>FREE DRAW</h1>
                 <div className="Freedraw-DrawingBoard">
-                    <Drawingboard color={this.state.color} addImage={this.addImage} resetColor={this.resetColor} getColor={this.getColor}/>
+                    <Drawingboard color={this.state.color} addImage={this.props.addImage} resetColor={this.resetColor} getColor={this.getColor}/>
                     <SketchPicker color={this.state.color} onChange={this.changeColor}/>
                 </div>
-                <Collection images={this.state.images} />
+                {/* <Collection images={this.state.images} /> */}
             </div>
         );
     }

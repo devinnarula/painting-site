@@ -1,5 +1,79 @@
 .Home-Title {
-    font-size: 40px;
+    font-size: 50px;
     color: yellow;
     text-shadow: 3px 3px indigo;
+    /* width: 20%; */
+    letter-spacing: 10px;
+    animation-duration: 6s;
+    animation-name: bounce;
+}
+@keyframes bounce {
+    0% {
+        letter-spacing: 100px;
+    }
+    20% {
+        letter-spacing: 10px;
+    }
+    50% {
+        letter-spacing: 60px;
+    }
+    100% {
+        letter-spacing: 10px;
+    }
+}
+
+.Home-Images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.Image-Left{
+    width: 400px;
+    height: 400px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    transform: rotateZ(10deg);
+    opacity: 100%;
+    animation-duration: 12s;
+    animation-name: fadein1;
+}
+@keyframes fadein1 {
+    0% {
+        transform: rotateZ(10deg);
+        opacity: 0%;
+    }
+    40% {
+        transform: rotateZ(10deg);
+        opacity: 0%;
+    }
+    100% {
+        transform: rotateZ(370deg);
+        opacity: 100%;
+    }
+}
+
+.Image-Right{
+    width: 500px;
+    height: 500px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    transform: rotateZ(-10deg);
+    opacity: 100%;
+    animation-duration: 12s;
+    animation-name: fadein2;
+}
+@keyframes fadein2 {
+    0% {
+        transform: rotateZ(-10deg);
+        opacity: 0%;
+    }
+    50% {
+        transform: rotateZ(-10deg);
+        opacity: 0%;
+    }
+    100% {
+        transform: rotateZ(-370deg);
+        opacity: 100%;
+    }
 }
