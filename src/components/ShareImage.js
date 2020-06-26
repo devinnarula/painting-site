@@ -6,14 +6,14 @@ class ShareImage extends Component {
     constructor(props){
         super(props)
         this.state = {
-            brightness: 100,
-            contrast: 100,
+            brightness: 50,
+            contrast: 50,
             grayscale: 0,
             blur: 0,
             huerotate: 0,
             invert: 0,
             opacity: 100,
-            saturate: 100,
+            saturate: 50,
             sepia: 0,
         };
         this.downloadImage = this.downloadImage.bind(this)
@@ -68,25 +68,25 @@ class ShareImage extends Component {
         return (
             <div className='ShareImage'>
                 <h1>Edit and Download</h1>
+                <button className='ShareImage-Button' onClick={this.props.exitDisplay()} >X</button>
                 <div className='ShareImage-Content'>
                     <img className="ShareImage-img" src={this.props.imgSrc} 
                     style={{
                         filter: `
-                        brightness(${this.state.brightness}%)
-                        contrast(${this.state.contrast}%)
+                        brightness(${this.state.brightness*2}%)
+                        contrast(${this.state.contrast*2}%)
                         grayscale(${this.state.grayscale}%)
                         blur(${this.state.blur}px)
                         hue-rotate(${this.state.huerotate*3.6}deg)
                         invert(${this.state.invert}%)
                         opacity(${this.state.opacity}%)
-                        saturate(${this.state.saturate}%)
+                        saturate(${this.state.saturate*2}%)
                         sepia(${this.state.sepia}%)
                         `
                     }} 
                     />
                     <div className='ShareImage-Buttons'>
-                        <button onClick={this.downloadImage} >Download</button>
-                        <div class="slidecontainer">
+                        <div>
                             <div>
                             <label for="brightness">Brightness</label>
                             <input type="range" min="0" max="100" value={this.state.brightness} name="brightness" onChange={this.updateBrightness} />
@@ -124,6 +124,7 @@ class ShareImage extends Component {
                             <input type="range" min="0" max="100" value={this.state.sepia} name="sepia" onChange={this.updateSepia} />
                             </div>
                         </div>
+                        <button className='ShareImage-Button' onClick={this.downloadImage} >Download</button>
                     </div>
                 </div>
             </div>

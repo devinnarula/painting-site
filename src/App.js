@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar className="App-Navbar">
-          <Navbar.Brand>Drawing</Navbar.Brand>
+          <Navbar.Brand className='App-NavTitle'>Let's Draw!</Navbar.Brand>
           <div>
           <Nav>
             <Link className='App-link' to='/'>Home</Link>

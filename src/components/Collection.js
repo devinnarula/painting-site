@@ -10,15 +10,19 @@ class Collection extends Component {
             shouldDisplay: false
         };
         this.displayImage = this.displayImage.bind(this)
+        this.exitDisplay = this.exitDisplay.bind(this)
     }
     displayImage(img) {
         this.setState({selectedImage: img, shouldDisplay: true})
     }
+    exitDisplay() {
+        this.setState({shouldDisplay: false})
+    }
     render() {
         return (
             <div className='Collection-Container'>
-                {this.state.shouldDisplay && <ShareImage imgSrc={this.state.selectedImage} />}
-                <h1>My Collection:</h1>
+                {this.state.shouldDisplay && <ShareImage imgSrc={this.state.selectedImage} exitDisplay={this.exitDisplay} />}
+                <h1 className='Collection-Title'>My Collection:</h1>
                 <div className='Collection' >
                     {this.props.images.map((i) => (
                         <img src={i} className="Collection-img" onClick={() => this.displayImage(i)} />

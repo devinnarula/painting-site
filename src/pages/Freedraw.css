@@ -1,5 +1,10 @@
-.Freedraw-DrawingBoard{
+.Freedraw-Title {
+    font-size: 40px;
+    color: yellow;
+    text-shadow: 3px 3px indigo;
+}
+.Freedraw-DrawingBoard {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
 }

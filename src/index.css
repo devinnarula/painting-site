@@ -1,14 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Shadows Into Light', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* -webkit-user-select: none;
 	-webkit-user-drag: none;
 	-webkit-app-region: no-drag; */
-  background-color: whitesmoke;
+  background-color: rgb(32, 108, 179);
 }
 
 code {

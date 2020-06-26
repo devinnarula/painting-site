@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+.Collection-Title {
+    font-size: 35px;
+    color: yellow;
+    text-shadow: 3px 3px indigo;
+}
+
 .Collection {
     display: flex;
     flex-wrap: wrap;
@@ -13,9 +19,8 @@
 .Collection-img {
     width: 250px;
     height: 250px;
-    border: 3px solid lightgray;
     margin: 20px;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .Collection-img:hover {

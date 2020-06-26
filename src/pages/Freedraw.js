@@ -33,12 +33,11 @@ class Freedraw extends Component {
     render() {
         return (
             <div>
-                <h1>FREE DRAW</h1>
+                <h1 className='Freedraw-Title'>FREE DRAW</h1>
                 <div className="Freedraw-DrawingBoard">
                     <Drawingboard color={this.state.color} addImage={this.addImage} resetColor={this.resetColor} getColor={this.getColor}/>
                     <SketchPicker color={this.state.color} onChange={this.changeColor}/>
                 </div>
-                <button onClick={this.resetColor}>Clear</button>
                 <Collection images={this.state.images} />
             </div>
         );
