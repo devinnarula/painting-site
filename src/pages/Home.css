@@ -34,22 +34,22 @@
     margin-top: 40px;
     margin-bottom: 100px;
     transform: rotateZ(10deg);
-    opacity: 100%;
+    opacity: 1;
     animation-duration: 12s;
     animation-name: fadein1;
 }
 @keyframes fadein1 {
     0% {
         transform: rotateZ(10deg);
-        opacity: 0%;
+        opacity: 0;
     }
     40% {
         transform: rotateZ(10deg);
-        opacity: 0%;
+        opacity: 0;
     }
     100% {
         transform: rotateZ(370deg);
-        opacity: 100%;
+        opacity: 1;
     }
 }
 
@@ -59,21 +59,21 @@
     margin-top: 30px;
     margin-bottom: 100px;
     transform: rotateZ(-10deg);
-    opacity: 100%;
+    opacity: 1;
     animation-duration: 12s;
     animation-name: fadein2;
 }
 @keyframes fadein2 {
     0% {
         transform: rotateZ(-10deg);
-        opacity: 0%;
+        opacity: 0;
     }
     50% {
         transform: rotateZ(-10deg);
-        opacity: 0%;
+        opacity: 0;
     }
     100% {
         transform: rotateZ(-370deg);
-        opacity: 100%;
+        opacity: 1;
     }
 }
